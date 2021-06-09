@@ -2,7 +2,7 @@
   'use strict'
 
   const listProvinces = [
-    [0, 'Aceh',[
+    [0, 'Aceh', [
       'Kab. Aceh Barat',
       'Kab. Aceh Barat Daya',
       'Kab. Aceh Besar',
@@ -97,10 +97,10 @@
     ]],
     [8, 'Jawa Barat', [
       'Kab. Bandung',
-      'Kab. Bandung Barat', 
+      'Kab. Bandung Barat',
       'Kab. Bekasi',
       'Kab. Bogor',
-      'Kab. Ciamis', 
+      'Kab. Ciamis',
       'Kab. Cianjur',
       'Kab. Cirebon',
       'Kab. Garut',
@@ -114,14 +114,14 @@
       'Kab. Sukabumi',
       'Kab. Sumedang',
       'Kab. Tasikmalaya',
-      'Kota. Bandung', 
-      'Kota. Banjar', 
-      'Kota. Bekasi', 
-      'Kota. Bogor', 
-      'Kota. Cimahi', 
-      'Kota. Cirebon', 
-      'Kota. Depok', 
-      'Kota. Sukabumi', 
+      'Kota. Bandung',
+      'Kota. Banjar',
+      'Kota. Bekasi',
+      'Kota. Bogor',
+      'Kota. Cimahi',
+      'Kota. Cirebon',
+      'Kota. Depok',
+      'Kota. Sukabumi',
       'Kota. Tasikmalaya'
     ]],
     [9, 'Jawa Tengah', [
@@ -155,7 +155,7 @@
       'Kab. Wonogiri',
       'Kab. Wonosobo',
       'Kota. Magelang',
-      'Kota. Pekalongan', 
+      'Kota. Pekalongan',
       'Kota. Salatiga',
       'Kota. Semarang',
       'Kota. Surakarta',
@@ -198,7 +198,7 @@
       'Kota. Malang',
       'Kota. Mojokerto',
       'Kota. Pasuruan',
-      'Kota. Probolinggo', 
+      'Kota. Probolinggo',
       'Kota. Surabaya'
     ]],
     [11, 'Kalimantan Barat', [
@@ -242,8 +242,8 @@
       'Kab. Kotawaringin Barat',
       'Kab. Kotawaringin Timur',
       'Kab. Lamandau',
-      'Kab. Murung Raya', 
-      'Kab. Pulang Pisau', 
+      'Kab. Murung Raya',
+      'Kab. Pulang Pisau',
       'Kab. Sukamar',
       'Kab. Seruyan',
       'Kota. Palangka Raya'
@@ -691,6 +691,7 @@
       dependent: 4,
       creditCard: 0,
       onlineShopping: 0,
+      onlineShopping1th: 0,
       insurance: 0,
       investment: 0
     }
@@ -926,7 +927,7 @@
       const dependent = b.querySelector('#dependent')
       const creditCard = b.querySelector('#credit-card')
       const onlineShopping = b.querySelector('#online-shopping')
-      const onlineShopping = b.querySelector('#online-shopping-1th')
+      const onlineShopping1th = b.querySelector('#online-shopping-1th')
       const insurance = b.querySelector('#insurance')
       const investment = b.querySelector('#investment')
 
@@ -989,6 +990,16 @@
         onlineShopping.innerHTML = options
       }
       renderOnlineShoping()
+
+      // render onlineShopping1th
+      const renderOnlineShoping1th = function () {
+        let options = ''
+        creditCharacterCriterias.onlineShopping1th.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        onlineShopping1th.innerHTML = options
+      }
+      renderOnlineShoping1th()
 
       // render insurance
       const renderInsurance = function () {
@@ -1057,6 +1068,13 @@
         didUpdate()
       }
 
+      // handle change onlineShopping1th
+      onlineShopping1th.onchange = function (e) {
+        const value = e.target.value
+        state.onlineShopping1th = Number(value)
+        didUpdate()
+      }
+
       // handle change insurance
       insurance.onchange = function (e) {
         const value = e.target.value
@@ -1082,6 +1100,7 @@
         state.dependent +
         state.creditCard +
         state.onlineShopping +
+        state.onlineShopping1th +
         state.insurance +
         state.investment
       return character
