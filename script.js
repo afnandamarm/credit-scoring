@@ -664,6 +664,16 @@
     ]
   }
 
+  const creditCapacityCriterias = {
+    bidangUsaha: [
+      [2, 'Agrikultur'],
+      [4, 'Jasa'],
+      [6, 'Manufaktur'],
+      [8, 'Bahan pokok'],
+      [10, 'Lain-lain']
+    ]
+  }
+
   const b = d.body
   b.onload = function () {
     // state
@@ -693,14 +703,19 @@
       onlineShopping: 0,
       onlineShopping1th: 0,
       insurance: 0,
-      investment: 0
+      investment: 0,
+      // credit-capacity-field
+      bidangUsaha: 2
     }
 
     const prevBtn = b.querySelector('#prev-btn')
     const nextBtn = b.querySelector('#next-btn')
+    // section
     const personalFieldSection = b.querySelector('#personal-field')
     const creditCharacterFieldSection = b.querySelector('#credit-character-field')
+    const creditCapacityFieldSection = b.querySelector('#credit-capacity-field')
     const creditScoreSection = b.querySelector('#credit-score')
+    //
     const creditScoreSectionValue = b.querySelector('#credit-score-value')
 
     // Personal Field
@@ -1091,6 +1106,35 @@
     }
     creditCharacterField()
 
+    // Credit Capacity Field
+    const creditCapacityField = function () {
+      // get element
+      const bidangUsaha = b.querySelector('#bidangUsaha')
+
+      // render age
+      const renderBidangUsaha = function () {
+        let options = ''
+        creditCapacityCriterias.bidangUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        bidangUsaha.innerHTML = options
+      }
+      renderBidangUsaha()
+
+      // did Update
+      const didUpdate = function () {
+        //
+      }
+
+      // handle change age
+      bidangUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.bidangUsaha = Number(value)
+        didUpdate()
+      }
+    }
+    creditCapacityField()
+
     // calculate score
     const calculateScore = function () {
       const character = 0 +
@@ -1102,7 +1146,8 @@
         state.onlineShopping +
         state.onlineShopping1th +
         state.insurance +
-        state.investment
+        state.investment +
+        state.bidangUsaha
       return character
     }
 
@@ -1145,6 +1190,10 @@
           state.section = 'credit-character-field'
         } else if (state.section === 'credit-character-field') {
           creditCharacterFieldSection.classList.remove('show')
+          creditCapacityFieldSection.classList.add('show')
+          state.section = 'redit-capacity-field'
+        } else if (state.section === 'credit-capacity-field') {
+          creditCapacityFieldSection.classList.remove('show')
           creditScoreSection.classList.add('show')
           nextBtn.classList.add('disabled')
           nextBtn.classList.add('hidden')
