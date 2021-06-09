@@ -622,8 +622,7 @@
     ],
     marriage: [
       [0, 'belum menikah'],
-      [1, 'sudah menikah'],
-      [-1, 'Jomblo']
+      [1, 'sudah menikah']
     ],
     dependent: [
       [4, '0 orang'],
