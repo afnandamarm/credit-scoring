@@ -644,6 +644,13 @@
       [3, '6 sampai 10'],
       [4, 'lebih dari 10']
     ],
+    onlineShopping1th: [
+      [0, 'tidak pernah'],
+      [1, '1 sampai 2'],
+      [2, '3 sampai 5'],
+      [3, '6 sampai 10'],
+      [4, 'lebih dari 10']
+    ],
     insurance: [
       [0, 'tidak ada'],
       [1, 'memiliki asuransi']
@@ -919,6 +926,7 @@
       const dependent = b.querySelector('#dependent')
       const creditCard = b.querySelector('#credit-card')
       const onlineShopping = b.querySelector('#online-shopping')
+      const onlineShopping = b.querySelector('#online-shopping-1th')
       const insurance = b.querySelector('#insurance')
       const investment = b.querySelector('#investment')
 
