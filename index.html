@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damar Credit</title>
+    <link rel='stylesheet' href='./style.css' />
+  </head>
+  <body>
+    <!-- appbar -->
+    <div class='appbar'>
+      <p class='title'>Damar Credit</p>
+    </div>
+    <!-- main -->
+    <div class='wrapper'>
+      <div class='section show' id='personal-field'>
+        <div class='card'>
+          <!-- Name -->
+          <div class='field'>
+            <p class='label'>Nama</p>
+            <input class='input' placeholder='Nama' id='name' />
+          </div>
+          <!-- Gender -->
+          <div class='field'>
+            <p class='label'>Jenis Kelamin</p>
+            <select class='select' id='gender'>
+              <option value='Laki-laki'>Laki-laki</option>
+              <option value='Perempuan'>Perempuan</option>
+            </select>
+          </div>
+          <!-- Email -->
+          <div class='field'>
+            <p class='label'>Email</p>
+            <input class='input' placeholder='Email' id='email' />
+          </div>
+          <!-- Phone -->
+          <div class='field'>
+            <p class='label'>Nomor Ponsel</p>
+            <input class='input' placeholder='Nomor Ponsel' id='phone' />
+          </div>
+          <!-- Province -->
+          <div class='field'>
+            <p class='label'>Provinsi</p>
+            <select class='select' id='province'></select>
+          </div>
+          <!-- Domicile -->
+          <div class='field'>
+            <p class='label'>Domisili</p>
+            <select class='select' id='domicile'></select>
+          </div>
+          <!-- DoB (Date of Birth) -->
+          <div class='field'>
+            <p class='label'>Tanggal Lahir</p>
+            <select class='select' id='dob-year'></select>
+            <select class='select' id='dob-month'></select>
+            <select class='select' id='dob-date'></select>
+          </div>
+          <!-- Company Name -->
+          <div class='field'>
+            <p class='label'>Nama Perusahaan</p>
+            <input class='input' placeholder='Nama Perusahaan' id='company-name' />
+          </div>
+          <!-- Company Province -->
+          <div class='field'>
+            <p class='label'>Provinsi Perusahaan</p>
+            <select class='select' id='company-province'></select>
+          </div>
+          <!-- Company Domicile -->
+          <div class='field'>
+            <p class='label'>Domisili Perusahaan</p>
+            <select class='select' id='company-domicile'></select>
+          </div>
+          <!-- Company Email -->
+          <div class='field'>
+            <p class='label'>Email Perusahaan</p>
+            <input class='input' placeholder='Email Perusahaan' id='company-email' />
+          </div>
+          <!-- Company Phone -->
+          <div class='field'>
+            <p class='label'>Nomor Telepon Perusahaan</p>
+            <input class='input' placeholder='Nomor Telepon Perusahaan' id='company-phone' />
+          </div>
+          <!-- -->
+        </div>
+      </div>
+      <div class='section' id='credit-character-field'>
+        <div class='card'>
+          <!-- Age -->
+          <div class='field'>
+            <p class='label'>Usia</p>
+            <select class='select' id='age'></select>
+          </div>
+          <!-- Education -->
+          <div class='field'>
+            <p class='label'>Pendidikan</p>
+            <select class='select' id='education'></select>
+          </div>
+          <!-- Marriage -->
+          <div class='field'>
+            <p class='label'>Pernikahan</p>
+            <select class='select' id='marriage'></select>
+          </div>
+          <!-- Dependent -->
+          <div class='field'>
+            <p class='label'>Tanggungan</p>
+            <select class='select' id='dependent'></select>
+          </div>
+          <!-- Credit Card -->
+          <div class='field'>
+            <p class='label'>Kartu Kredit</p>
+            <select class='select' id='credit-card'></select>
+          </div>
+          <!-- Online shopping -->
+          <div class='field'>
+            <p class='label'>Belanja online 6 bulan terakhir</p>
+            <select class='select' id='online-shopping'></select>
+          </div>
+          <!-- Insurance -->
+          <div class='field'>
+            <p class='label'>Asuransi</p>
+            <select class='select' id='insurance'></select>
+          </div>
+          <!-- Investment -->
+          <div class='field'>
+            <p class='label'>Investasi</p>
+            <select class='select' id='investment'></select>
+          </div>
+          <!-- -->
+        </div>
+      </div>
+      <div class='section' id='credit-score'>
+        <div class='card'>
+          <!-- score -->
+          <div class='score-wrapper'>
+            <div class='score-label'>Skor Kredit</div>
+            <div class='score-value' id='credit-score-value'></div>
+          </div>
+          <!-- personal data -->
+          <div class='personal-wrapper'>
+            <!-- Name -->
+            <div class='field'>
+              <p class='label'>Nama</p>
+              <p class='data-field' id='data-name'></p>
+            </div>
+            <!-- Gender -->
+            <div class='field'>
+              <p class='label'>Jenis Kelamin</p>
+              <p class='data-field' id='data-gender'></p>
+            </div>
+            <!-- Email -->
+            <div class='field'>
+              <p class='label'>Email</p>
+              <p class='data-field' id='data-email'></p>
+            </div>
+            <!-- Phone -->
+            <div class='field'>
+              <p class='label'>Nomor Ponsel</p>
+              <p class='data-field' id='data-phone'></p>
+            </div>
+            <!-- Province -->
+            <div class='field'>
+              <p class='label'>Provinsi</p>
+              <p class='data-field' id='data-province'></p>
+            </div>
+            <!-- Domicile -->
+            <div class='field'>
+              <p class='label'>Domisili</p>
+              <p class='data-field' id='data-domicile'></p>
+            </div>
+            <!-- Date of Birth (DoB) -->
+            <div class='field'>
+              <p class='label'>Tanggal Lahir</p>
+              <p class='data-field' id='data-dob'></p>
+            </div>
+            <!-- Company Name -->
+            <div class='field'>
+              <p class='label'>Nama Perusahaan</p>
+              <p class='data-field' id='data-company-name'></p>
+            </div>
+            <!-- Company Province -->
+            <div class='field'>
+              <p class='label'>Provinsi Perusahaan</p>
+              <p class='data-field' id='data-company-province'></p>
+            </div>
+            <!-- Company Domicile -->
+            <div class='field'>
+              <p class='label'>Domisili Perusahaan</p>
+              <p class='data-field' id='data-company-domicile'></p>
+            </div>
+            <!-- Company Email -->
+            <div class='field'>
+              <p class='label'>Email Perusahaan</p>
+              <p class='data-field' id='data-company-email'></p>
+            </div>
+            <!-- Company Phone -->
+            <div class='field'>
+              <p class='label'>Nomor Telepon Perusahaan</p>
+              <p class='data-field' id='data-company-phone'></p>
+            </div>
+            <!-- -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bottombar -->
+    <div class='bottombar'>
+      <button class='button disabled hidden' id='prev-btn'>Prev</button>
+      <button class='button disabled' id='next-btn'>Next</button>
+    </div>
+    <script src='./script.js'></script>
+  </body>
+</html>

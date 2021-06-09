@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  float: left;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+}
+
+.appbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #2196F3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .24);
+  padding: 16px;
+}
+
+.appbar .title {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 72px 16px;
+}
+
+.section {
+  width: 100%;
+  display: none;
+}
+
+.section.show {
+  width: 100%;
+  display: block;
+}
+
+.card {
+  width: 100%;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .24);
+  padding: 16px;
+}
+
+.field {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.label {
+  width: 100%;
+  font-size: 13px;
+  margin: 0 0 8px;
+  cursor: default;
+  color: rgba(0, 0, 0, .56);
+}
+
+.input {
+  border: 1px solid rgba(0, 0, 0, .24);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  background: #fafafa;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.select {
+  border: 1px solid rgba(0, 0, 0, .24);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  background: #fafafa;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.select#dob-year {
+  width: 30%;
+  margin-right: 2.5%;
+}
+
+.select#dob-month {
+  width: 40%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+
+.select#dob-date {
+  width: 20%;
+  margin-left: 2.5%;
+}
+
+.bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #ffffff;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, .24);
+  padding: 10px 16px;
+}
+
+.bottombar button.button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 16px;
+  height: 36px;
+  cursor: pointer;
+  background: #2196F3;
+  font-size: 16px;
+  color: #ffffff;
+  float: left;
+}
+
+.bottombar button.button.disabled {
+  background: #BBDEFB;
+  color: rgba(0, 0, 0, .38);
+  cursor: default;
+}
+
+.bottombar button.button#next-btn {
+  float: right;
+}
+
+.bottombar button.hidden {
+  display: none;
+}
+
+.score-wrapper,
+.personal-wrapper {
+  width: 100%;
+  padding: 12px 0;
+}
+
+.score-label {
+  width: 100%;
+  font-size: 13px;
+  margin: 12 0 8px;
+  cursor: default;
+  color: rgba(0, 0, 0, .56);
+  text-align: center;
+}
+
+.score-value {
+  width: 100%;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 8 0 12px;
+  cursor: default;
+  color: rgba(0, 0, 0, .87);
+  text-align: center;
+}
