@@ -2,7 +2,7 @@
   'use strict'
 
   const listProvinces = [
-    [0, 'Aceh', [
+    [0, 'Aceh',[
       'Kab. Aceh Barat',
       'Kab. Aceh Barat Daya',
       'Kab. Aceh Besar',
@@ -671,6 +671,19 @@
       [6, 'Manufaktur'],
       [8, 'Bahan pokok'],
       [10, 'Lain-lain']
+    ],
+    lamaUsaha: [
+      [2, 'Kurang dari 1 tahun'],
+      [4, '1-5 tahun'],
+      [6, '6-10 tahun'],
+      [8, 'Lebih dari 10 tahun']
+    ],
+    usahayangDimiliki: [
+      [1, 'Tidak ada'],
+      [2, '1 usaha'],
+      [4, '2-3 usaha'],
+      [6, '3-5 usaha'],
+      [8, 'Lebih dari 5 usaha']
     ]
   }
 
@@ -705,7 +718,9 @@
       insurance: 0,
       investment: 0,
       // credit-capacity-field
-      bidangUsaha: 2
+      bidangUsaha: 2,
+      lamaUsaha: 2,
+      usahayangDimiliki: 1,
     }
 
     const prevBtn = b.querySelector('#prev-btn')
@@ -1110,8 +1125,10 @@
     const creditCapacityField = function () {
       // get element
       const bidangUsaha = b.querySelector('#bidangUsaha')
+      const lamaUsaha = b.querySelector('#lamaUsaha')
+      const usahayangDimiliki = b.querySelector('#usahayangDimiliki')
 
-      // render age
+      // render Bidang Usaha
       const renderBidangUsaha = function () {
         let options = ''
         creditCapacityCriterias.bidangUsaha.forEach((option) => {
@@ -1121,17 +1138,50 @@
       }
       renderBidangUsaha()
 
+      // render Lama Usaha
+      const renderLamaUsaha = function () {
+        let options = ''
+        creditCapacityCriterias.lamaUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        lamaUsaha.innerHTML = options
+      }
+      renderLamaUsaha()
+
+      // render Usaha yang Dimiliki
+      const renderUsahayangDimiliki = function () {
+        let options = ''
+        creditCapacityCriterias.usahayangDimiliki.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        usahayangDimiliki.innerHTML = options
+      }
+      renderUsahayangDimiliki()
+
       // did Update
       const didUpdate = function () {
         //
       }
 
-      // handle change age
+      // handle change Bidang Usaha
       bidangUsaha.onchange = function (e) {
         const value = e.target.value
         state.bidangUsaha = Number(value)
         didUpdate()
       }
+
+      // handle change Bidang Usaha
+      lamaUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.lamaUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Usaha yang Dimiliki
+      usahayangDimiliki.onchange = function (e) {
+        const value = e.target.value
+        state.usahayangDimiliki = Number(value)
+        didUpdate()
     }
     creditCapacityField()
 
@@ -1147,7 +1197,9 @@
         state.onlineShopping1th +
         state.insurance +
         state.investment +
-        state.bidangUsaha
+        state.bidangUsaha +
+        state.lamaUsaha +
+        state.usahayangDimiliki
       return character
     }
 
