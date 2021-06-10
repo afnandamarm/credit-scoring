@@ -684,7 +684,36 @@
       [4, '2-3 usaha'],
       [6, '3-5 usaha'],
       [8, 'Lebih dari 5 usaha']
-    ]
+    ],
+    totalPekerja: [
+      [1, 'Tidak ada'],
+      [2, 'Kurang dari 5 orang'],
+      [4, '5-10 orang'],
+      [6, '10-20 orang'],
+      [8, 'Lebih dari 20 orang']
+    ],
+    persainganUsaha: [
+      [2, 'Kurang dari 5 pesaing'],
+      [4, '5-10 pesaing'],
+      [6, '11-15 pesaing'],
+      [8, 'Lebih dari 15 pesaing']
+    ],
+    omsetperBulan: [
+      [0, 'Negatif'],
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-20 juta'],
+      [6, '20-30 juta'],
+      [8, '50-100 juta'],
+      [10, 'Lebih dari 100 juta']
+    ],
+    omsetperTahun: [
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-30 juta'],
+      [6, '31-50 juta'],
+      [8, '50-75 juta'],
+      [10, '76-100 juta'],
+      [12, 'Lebih dari 100 juta']
+    ],
   }
 
   const b = d.body
@@ -721,6 +750,10 @@
       bidangUsaha: 2,
       lamaUsaha: 2,
       usahayangDimiliki: 1,
+      totalPekerja: 1,
+      persainganUsaha: 2,
+      omsetperBulan: 2,
+      omsetperTahun: 2,
     }
 
     const prevBtn = b.querySelector('#prev-btn')
@@ -1127,6 +1160,10 @@
       const bidangUsaha = b.querySelector('#bidangUsaha')
       const lamaUsaha = b.querySelector('#lamaUsaha')
       const usahayangDimiliki = b.querySelector('#usahayangDimiliki')
+      const totalPekerja = b.querySelector('#totalPekerja')
+      const persainganUsaha = b.querySelector('#persainganUsaha')
+      const omsetperBulan = b.querySelector('#omsetperBulan')
+      const omsetperTahun = b.querySelector('#omsetperTahun')
 
       // render Bidang Usaha
       const renderBidangUsaha = function () {
@@ -1158,6 +1195,46 @@
       }
       renderUsahayangDimiliki()
 
+      // render Total Pekerja
+      const renderTotalPekerja = function () {
+        let options = ''
+        creditCapacityCriterias.totalPekerja.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPekerja.innerHTML = options
+      }
+      renderTotalPekerja()
+
+      // render Persaingan Usaha
+      const renderpersainganUsaha = function () {
+        let options = ''
+        creditCapacityCriterias.persainganUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        persainganUsaha.innerHTML = options
+      }
+      renderpersainganUsaha()
+
+      // render Omset per Bulan
+      const renderomsetperBulan = function () {
+        let options = ''
+        creditCapacityCriterias.omsetperBulan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        omsetperBulan.innerHTML = options
+      }
+      renderomsetperBulan()
+
+      // render Omset per Tahun
+      const renderomsetperTahun = function () {
+        let options = ''
+        creditCapacityCriterias.omsetperTahun.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        omsetperTahun.innerHTML = options
+      }
+      renderomsetperTahun()
+
       // did Update
       const didUpdate = function () {
         //
@@ -1182,6 +1259,35 @@
         const value = e.target.value
         state.usahayangDimiliki = Number(value)
         didUpdate()
+      }
+
+      // handle change Total Pekerja
+      totalPekerja.onchange = function (e) {
+        const value = e.target.value
+        state.totalPekerja = Number(value)
+        didUpdate()
+      }
+
+      // handle change Persaingan Usaha
+      persainganUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.persainganUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Omset per Bulan
+      omsetperBulan.onchange = function (e) {
+        const value = e.target.value
+        state.omsetperBulan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Omset per Tahun
+      omsetperTahun.onchange = function (e) {
+        const value = e.target.value
+        state.omsetperTahun = Number(value)
+        didUpdate()
+      }
     }
     creditCapacityField()
 
@@ -1199,7 +1305,11 @@
         state.investment +
         state.bidangUsaha +
         state.lamaUsaha +
-        state.usahayangDimiliki
+        state.usahayangDimiliki +
+        state.totalPekerja +
+        state.persainganUsaha +
+        state.omsetperBulan +
+        state.omsetperTahun
       return character
     }
 
@@ -1232,7 +1342,7 @@
     }
 
     nextBtn.onclick = function () {
-      if (!nextBtn.classList.contains('disabled')) {
+      if (!nextBtn.classList.contains('show')) {
         if (state.section === 'personal-field') {
           personalFieldSection.classList.remove('show')
           creditCharacterFieldSection.classList.add('show')
@@ -1243,7 +1353,7 @@
         } else if (state.section === 'credit-character-field') {
           creditCharacterFieldSection.classList.remove('show')
           creditCapacityFieldSection.classList.add('show')
-          state.section = 'redit-capacity-field'
+          state.section = 'credit-capacity-field'
         } else if (state.section === 'credit-capacity-field') {
           creditCapacityFieldSection.classList.remove('show')
           creditScoreSection.classList.add('show')
