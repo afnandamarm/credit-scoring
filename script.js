@@ -777,6 +777,227 @@
     ],
   }
 
+  const creditCapitalCriterias = {
+    kepemilikanTempatUsaha: [
+      [2, 'Sewa'],
+      [3, 'Milik Sendiri']
+    ],
+    kepemilikanAset: [
+      [2, 'Kurang dari 10 juta'],
+      [3, '10-15 juta'],
+      [4, '16-25 juta'],
+      [5, '26-50 juta'],
+      [6, '50-100 juta'],
+      [7, 'Lebih dari 100 juta']
+    ],
+    modalUntukUsaha: [
+      [2, 'Kurang dari 50 juta'],
+      [3, '50-100 juta'],
+      [4, '100-200 juta'],
+      [5, 'Lebih dari 200 juta']
+    ],
+    kepemilikanModal: [
+      [2, 'Hutang'],
+      [3, 'Modal Sendiri']
+    ],
+    pembiayaanModalUsaha: [
+      [2, 'Sewa'],
+      [3, 'Milik Sendiri']
+    ],
+    jangkawaktuTabungan: [
+      [2, 'Kurang dari 5 tahun'],
+      [3, '6-9 tahun'],
+      [4, '10-15 tahun'],
+      [5, 'Lebih dari 15 tahun']
+    ],
+    depositoperBulan: [
+      [2, 'Kurang dari 1 kali'],
+      [3, '1-2 kali'],
+      [4, '3-5 kali'],
+      [5, 'Lebih dari 5 kali']
+    ],
+    penarikanperBulan: [
+      [2, 'Kurang dari 1 kali'],
+      [3, '1-2 kali'],
+      [4, '3-5 kali'],
+      [5, 'Lebih dari 5 kali']
+    ],
+    totalBalanceTabungan: [
+      [0, 'Negatif'],
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-20 juta'],
+      [6, '20-30 juta'],
+      [8, '50-100 juta'],
+      [10, 'Lebih dari 100 juta']
+    ],
+    totalBalanceDeposito: [
+      [2, 'Kurang dari 10 juta'],
+      [3, '10-15 juta'],
+      [4, '16-25 juta'],
+      [5, '26-50 juta'],
+      [6, '50-100 juta'],
+      [7, 'Lebih dari 100 juta']
+    ],
+  }
+
+  const creditConditionCriterias = {
+    kondisiUsaha: [
+      [2, 'Terdapat kendala'],
+      [3, 'Tanpa kendala']
+    ],
+    kondisiOperasional6BulanTerakhir: [
+      [2, 'Tidak lancar'],
+      [3, 'Lancar']
+    ],
+    kondisiOperasional1TahunTerakhir: [
+      [2, 'Tidak lancar'],
+      [3, 'Lancar']
+    ],
+    kinerjaKeuangan6BulanTerakhir: [
+      [2, 'Tidak lancar'],
+      [3, 'Lancar']
+    ],
+    kinerjaKeuangan1TahunTerakhir: [
+      [2, 'Tidak lancar'],
+      [3, 'Lancar']
+    ],
+  }
+
+  const creditCollateralCriterias = {
+    asetJaminan: [
+      [1, 'Tidak ada'],
+      [2, 'Kendaraan'],
+      [4, 'Mesin dan Peralatan'],
+      [6, 'Bangunan'],
+      [8, 'Tanah']
+    ],
+    kepemilikanTanah: [
+      [1, 'Tidak memiliki'],
+      [2, 'Sewa'],
+      [4, 'Warisan'],
+      [6, 'Milik pribadi']
+    ],
+    penggunaanTanah: [
+      [1, 'Tidak ada'],
+      [4, 'Lahan pertanian']
+    ],
+    lokasiTanah: [
+      [1, 'Tidak memiliki'],
+      [2, 'Lokasi tidak strategis'],
+      [4, 'Lokasi strategis']
+    ],
+    totalPerolehanJaminanTanah: [
+      [1, 'Tidak memiliki'],
+      [2, 'Kurang dari 25 juta'],
+      [4, '26-50 juta'],
+      [6, '51-100 juta'],
+      [2, '100-150 juta'],
+      [2, 'Lebih dari 200 juta']
+    ],
+    kepemilikanBangunan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Sewa'],
+      [4, 'Warisan'],
+      [6, 'Milik pribadi']
+    ],
+    usiaBangunan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Lebih dari 15 tahun'],
+      [4, '11-15 tahun'],
+      [6, '7-10 tahun'],
+      [8, '5-7 tahun'],
+      [10, 'Kurang dari 5 tahun']
+    ],
+    penggunaanBangunan: [
+      [1, 'Tidak ada'],
+      [2, 'Rumah'],
+      [4, 'Kantor'],
+      [6, 'Toko'],
+      [8, 'Lainnya']
+    ],
+    lokasiBangunan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Lokasi tidak strategis'],
+      [4, 'Lokasi strategis']
+    ],
+    totalPerolehanJaminanBangunan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Kurang dari 25 juta'],
+      [4, '26-50 juta'],
+      [6, '51-100 juta'],
+      [2, '100-150 juta'],
+      [2, 'Lebih dari 200 juta']
+    ],
+    kepemilikanMesindanPeralatan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Sewa'],
+      [4, 'Warisan'],
+      [6, 'Milik pribadi']
+    ],
+    usiaMesindanPeralatan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Lebih dari 15 tahun'],
+      [4, '11-15 tahun'],
+      [6, '7-10 tahun'],
+      [8, '5-7 tahun'],
+      [10, 'Kurang dari 5 tahun']
+    ],
+    kondisiMesindanPeralatan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Baru'],
+      [4, 'Bermasalah'],
+      [6, 'Rusak']
+    ],
+    penggunaanMesindanPeralatan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Kegiatan operasional'],
+      [4, 'Kegiatan distribusi']
+    ],
+    totalPerolehanJaminanMesindanPeralatan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Kurang dari 25 juta'],
+      [4, '26-50 juta'],
+      [6, '51-100 juta'],
+      [2, '100-150 juta'],
+      [2, 'Lebih dari 200 juta']
+    ],
+    kepemilikanKendaraan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Sewa'],
+      [4, 'Warisan'],
+      [6, 'Milik pribadi']
+    ],
+    usiaKendaraan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Lebih dari 15 tahun'],
+      [4, '11-15 tahun'],
+      [6, '7-10 tahun'],
+      [8, '5-7 tahun'],
+      [10, 'Kurang dari 5 tahun']
+    ],
+    kondisiKendaraan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Baru'],
+      [4, 'Bermasalah'],
+      [6, 'Rusak']
+    ],
+    jenisKendaraan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Motor'],
+      [4, 'Mobil'],
+      [6, 'Pickup'],
+      [8, 'Truk']
+    ],
+    totalPerolehanJaminanKendaraan: [
+      [1, 'Tidak memiliki'],
+      [2, 'Kurang dari 25 juta'],
+      [4, '26-50 juta'],
+      [6, '51-100 juta'],
+      [2, '100-150 juta'],
+      [2, 'Lebih dari 200 juta']
+    ],
+  }
+
   const b = d.body
   b.onload = function () {
     // state
@@ -822,6 +1043,44 @@
       terakhirPinjamanDisetujui: 1,
       totalPinjamanMenunggak: 1,
       waktuMaksimalMenunggak: 1,
+      // credit-capital-field
+      kepemilikanTempatUsaha: 2,
+      kepemilikanAset: 2,
+      modalUntukUsaha: 2,
+      kepemilikanModal: 2,
+      pembiayaanModalUsaha: 3,
+      jangkawaktuTabungan: 2,
+      depositoperBulan: 2,
+      penarikanperBulan: 2,
+      totalBalanceTabungan: 0,
+      totalBalanceDeposito: 2,
+      // credit-condition-field
+      kondisiUsaha: 2,
+      kondisiOperasional6BulanTerakhir: 2,
+      kondisiOperasional1TahunTerakhir: 2,
+      kinerjaKeuangan6BulanTerakhir: 2,
+      kinerjaKeuangan1TahunTerakhir: 2,
+      // credit-collateral-field
+      asetJaminan: 1,
+      kepemilikanTanah: 1,
+      penggunaanTanah: 1,
+      lokasiTanah: 1,
+      totalPerolehanJaminanTanah: 1,
+      kepemilikanBangunan: 1,
+      usiaBangunan: 1,
+      penggunaanBangunan: 1,
+      lokasiBangunan: 1,
+      totalPerolehanJaminanBangunan: 1,
+      kepemilikanMesindanPeralatan: 1,
+      usiaMesindanPeralatan: 1,
+      kondisiMesindanPeralatan: 1,
+      penggunaanMesindanPeralatan: 1,
+      totalPerolehanJaminanMesindanPeralatan: 1,
+      kepemilikanKendaraan: 1,
+      usiaKendaraan: 1,
+      kondisiKendaraan: 1,
+      jenisKendaraan: 1,
+      totalPerolehanJaminanKendaraan: 1,
     }
 
     const prevBtn = b.querySelector('#prev-btn')
@@ -830,6 +1089,9 @@
     const personalFieldSection = b.querySelector('#personal-field')
     const creditCharacterFieldSection = b.querySelector('#credit-character-field')
     const creditCapacityFieldSection = b.querySelector('#credit-capacity-field')
+    const creditCapitalFieldSection = b.querySelector('#credit-capital-field')
+    const creditConditionFieldSection = b.querySelector('#credit-condition-field')
+    const creditCollateralFieldSection = b.querySelector('#credit-collateral-field')
     const creditScoreSection = b.querySelector('#credit-score')
     //
     const creditScoreSectionValue = b.querySelector('#credit-score-value')
@@ -1499,9 +1761,671 @@
         state.waktuMaksimalMenunggak = Number(value)
         didUpdate()
       }
-
     }
     creditCapacityField()
+
+    // Credit Capital Field
+    const creditCapitalField = function () {
+      // get element
+      const kepemilikanTempatUsaha = b.querySelector('#kepemilikanTempatUsaha')
+      const kepemilikanAset = b.querySelector('#kepemilikanAset')
+      const modalUntukUsaha = b.querySelector('#modalUntukUsaha')
+      const kepemilikanModal = b.querySelector('#kepemilikanModal')
+      const pembiayaanModalUsaha = b.querySelector('#pembiayaanModalUsaha')
+      const jangkawaktuTabungan = b.querySelector('#jangkawaktuTabungan')
+      const depositoperBulan = b.querySelector('#depositoperBulan')
+      const penarikanperBulan = b.querySelector('#penarikanperBulan')
+      const totalBalanceTabungan = b.querySelector('#totalBalanceTabungan')
+      const totalBalanceDeposito = b.querySelector('#totalBalanceDeposito')
+
+      // render Kepemilikan Tempat Usaha
+      const renderkepemilikanTempatUsaha = function () {
+        let options = ''
+        creditCapitalCriterias.kepemilikanTempatUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanTempatUsaha.innerHTML = options
+      }
+      renderkepemilikanTempatUsaha()
+
+      // render Kepemilikan Aset
+      const renderkepemilikanAset = function () {
+        let options = ''
+        creditCapitalCriterias.kepemilikanAset.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanAset.innerHTML = options
+      }
+      renderkepemilikanAset()
+
+      // render Modal Untuk Usaha
+      const rendermodalUntukUsaha = function () {
+        let options = ''
+        creditCapitalCriterias.modalUntukUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        modalUntukUsaha.innerHTML = options
+      }
+      rendermodalUntukUsaha()
+
+      // render Kepemilikan Modal
+      const renderkepemilikanModal = function () {
+        let options = ''
+        creditCapitalCriterias.kepemilikanModal.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanModal.innerHTML = options
+      }
+      renderkepemilikanModal()
+
+      // render Pembiayaan Modal Usaha
+      const renderpembiayaanModalUsaha = function () {
+        let options = ''
+        creditCapitalCriterias.pembiayaanModalUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        pembiayaanModalUsaha.innerHTML = options
+      }
+      renderpembiayaanModalUsaha()
+
+      // render Jangka Waktu Tabungan
+      const renderjangkawaktuTabungan = function () {
+        let options = ''
+        creditCapitalCriterias.jangkawaktuTabungan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        jangkawaktuTabungan.innerHTML = options
+      }
+      renderjangkawaktuTabungan()
+
+      // render Deposito per Bulan
+      const renderdepositoperBulan = function () {
+        let options = ''
+        creditCapitalCriterias.depositoperBulan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        depositoperBulan.innerHTML = options
+      }
+      renderdepositoperBulan()
+
+      // render Penarikan per Bulan
+      const renderpenarikanperBulan = function () {
+        let options = ''
+        creditCapitalCriterias.penarikanperBulan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        penarikanperBulan.innerHTML = options
+      }
+      renderpenarikanperBulan()
+
+      // render Total Balance Tabungan
+      const rendertotalBalanceTabungan = function () {
+        let options = ''
+        creditCapitalCriterias.totalBalanceTabungan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalBalanceTabungan.innerHTML = options
+      }
+      rendertotalBalanceTabungan()
+
+      // render Total Balance Deposito
+      const rendertotalBalanceDeposito = function () {
+        let options = ''
+        creditCapitalCriterias.totalBalanceDeposito.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalBalanceDeposito.innerHTML = options
+      }
+      rendertotalBalanceDeposito()
+
+      // did Update
+      const didUpdate = function () {
+        //
+      }
+
+      // handle change Kepemilikan Tempat Usaha
+      kepemilikanTempatUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanTempatUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Aset
+      kepemilikanAset.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanAset = Number(value)
+        didUpdate()
+      }
+
+      // handle change Modal Untuk Usaha
+      modalUntukUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.modalUntukUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Modal
+      kepemilikanModal.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanModal = Number(value)
+        didUpdate()
+      }
+
+      // handle change Pembiayaan Modal Usaha
+      pembiayaanModalUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.pembiayaanModalUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Jangka Waktu Tabungan
+      jangkawaktuTabungan.onchange = function (e) {
+        const value = e.target.value
+        state.jangkawaktuTabungan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Deposito per Bulan
+      depositoperBulan.onchange = function (e) {
+        const value = e.target.value
+        state.depositoperBulan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Penarikan per Bulan
+      penarikanperBulan.onchange = function (e) {
+        const value = e.target.value
+        state.penarikanperBulan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Balance Tabungan
+      totalBalanceTabungan.onchange = function (e) {
+        const value = e.target.value
+        state.totalBalanceTabungan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Balance Deposito
+      totalBalanceDeposito.onchange = function (e) {
+        const value = e.target.value
+        state.totalBalanceDeposito = Number(value)
+        didUpdate()
+      }
+    }
+    creditCapitalField()
+
+    // Credit Condition Field
+    const creditConditionField = function () {
+      // get element
+      const kondisiUsaha = b.querySelector('#kondisiUsaha')
+      const kondisiOperasional6BulanTerakhir = b.querySelector('#kondisiOperasional6BulanTerakhir')
+      const kondisiOperasional1TahunTerakhir = b.querySelector('#kondisiOperasional1TahunTerakhir')
+      const kinerjaKeuangan6BulanTerakhir = b.querySelector('#kinerjaKeuangan6BulanTerakhir')
+      const kinerjaKeuangan1TahunTerakhir = b.querySelector('#kinerjaKeuangan1TahunTerakhir')
+
+      // render Kondisi Usaha
+      const renderkondisiUsaha = function () {
+        let options = ''
+        creditConditionCriterias.kondisiUsaha.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kondisiUsaha.innerHTML = options
+      }
+      renderkondisiUsaha()
+
+      // render Kondisi Operasional 6 Bulan Terakhir
+      const renderkondisiOperasional6BulanTerakhir = function () {
+        let options = ''
+        creditConditionCriterias.kondisiOperasional6BulanTerakhir.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kondisiOperasional6BulanTerakhir.innerHTML = options
+      }
+      renderkondisiOperasional6BulanTerakhir()
+
+      // render Kondisi Operasional 1 Tahun Terakhir
+      const renderkondisiOperasional1TahunTerakhir = function () {
+        let options = ''
+        creditConditionCriterias.kondisiOperasional1TahunTerakhir.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kondisiOperasional1TahunTerakhir.innerHTML = options
+      }
+      renderkondisiOperasional1TahunTerakhir()
+
+      // render Kinerja Keuangan 6 Bulan Terakhir
+      const renderkinerjaKeuangan6BulanTerakhir = function () {
+        let options = ''
+        creditConditionCriterias.kinerjaKeuangan6BulanTerakhir.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kinerjaKeuangan6BulanTerakhir.innerHTML = options
+      }
+      renderkinerjaKeuangan6BulanTerakhir()
+
+      // render Kinerja Keuangan 1 Tahun Terakhir
+      const renderkinerjaKeuangan1TahunTerakhir = function () {
+        let options = ''
+        creditConditionCriterias.kinerjaKeuangan1TahunTerakhir.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kinerjaKeuangan1TahunTerakhir.innerHTML = options
+      }
+      renderkinerjaKeuangan1TahunTerakhir()
+
+      // did Update
+      const didUpdate = function () {
+        //
+      }
+
+      // handle change Kondisi Usaha
+      kondisiUsaha.onchange = function (e) {
+        const value = e.target.value
+        state.kondisiUsaha = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kondisi Operasional 6 Bulan Terakhir
+      kondisiOperasional6BulanTerakhir.onchange = function (e) {
+        const value = e.target.value
+        state.kondisiOperasional6BulanTerakhir = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kondisi Operasional 1 Tahun Terakhir
+      kondisiOperasional1TahunTerakhir.onchange = function (e) {
+        const value = e.target.value
+        state.kondisiOperasional1TahunTerakhir = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kinerja Keuangan 6 Bulan Terakhir
+      kinerjaKeuangan6BulanTerakhir.onchange = function (e) {
+        const value = e.target.value
+        state.kinerjaKeuangan6BulanTerakhir = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kinerja Keuangan 1 Tahun Terakhir
+      kinerjaKeuangan1TahunTerakhir.onchange = function (e) {
+        const value = e.target.value
+        state.kinerjaKeuangan1TahunTerakhir = Number(value)
+        didUpdate()
+      }
+    }
+    creditConditionField()
+
+    // Credit Collateral Field
+    const creditCollateralField = function () {
+      // get element
+      const asetJaminan = b.querySelector('#asetJaminan')
+      const kepemilikanTanah = b.querySelector('#kepemilikanTanah')
+      const penggunaanTanah = b.querySelector('#penggunaanTanah')
+      const lokasiTanah = b.querySelector('#lokasiTanah')
+      const totalPerolehanJaminanTanah = b.querySelector('#totalPerolehanJaminanTanah')
+      const kepemilikanBangunan = b.querySelector('#kepemilikanBangunan')
+      const usiaBangunan = b.querySelector('#usiaBangunan')
+      const penggunaanBangunan = b.querySelector('#penggunaanBangunan')
+      const lokasiBangunan = b.querySelector('#lokasiBangunan')
+      const totalPerolehanJaminanBangunan = b.querySelector('#totalPerolehanJaminanBangunan')
+      const kepemilikanMesindanPeralatan = b.querySelector('#kepemilikanMesindanPeralatan')
+      const usiaMesindanPeralatan = b.querySelector('#usiaMesindanPeralatan')
+      const kondisiMesindanPeralatan = b.querySelector('#kondisiMesindanPeralatan')
+      const penggunaanMesindanPeralatan = b.querySelector('#penggunaanMesindanPeralatan')
+      const totalPerolehanJaminanMesindanPeralatan = b.querySelector('#totalPerolehanJaminanMesindanPeralatan')
+      const kepemilikanKendaraan = b.querySelector('#kepemilikanKendaraan')
+      const usiaKendaraan = b.querySelector('#usiaKendaraan')
+      const kondisiKendaraan = b.querySelector('#kondisiKendaraan')
+      const jenisKendaraan = b.querySelector('#jenisKendaraan')
+      const totalPerolehanJaminanKendaraan = b.querySelector('#totalPerolehanJaminanKendaraan')
+
+      // render Aset Jaminan
+      const renderasetJaminan = function () {
+        let options = ''
+        creditCollateralCriterias.asetJaminan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        asetJaminan.innerHTML = options
+      }
+      renderasetJaminan()
+
+      // render Kepemilikan Tanah
+      const renderkepemilikanTanah = function () {
+        let options = ''
+        creditCollateralCriterias.kepemilikanTanah.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanTanah.innerHTML = options
+      }
+      renderkepemilikanTanah()
+
+      // render Penggunaan Tanah
+      const renderpenggunaanTanah = function () {
+        let options = ''
+        creditCollateralCriterias.penggunaanTanah.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        penggunaanTanah.innerHTML = options
+      }
+      renderpenggunaanTanah()
+
+      // render Lokasi Tanah
+      const renderlokasiTanah = function () {
+        let options = ''
+        creditCollateralCriterias.lokasiTanah.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        lokasiTanah.innerHTML = options
+      }
+      renderlokasiTanah()
+
+      // render Total Perolehan Jaminan Tanah
+      const rendertotalPerolehanJaminanTanah = function () {
+        let options = ''
+        creditCollateralCriterias.totalPerolehanJaminanTanah.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPerolehanJaminanTanah.innerHTML = options
+      }
+      rendertotalPerolehanJaminanTanah()
+
+      // render Kepemilikan Bangunan
+      const renderkepemilikanBangunan = function () {
+        let options = ''
+        creditCollateralCriterias.kepemilikanBangunan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanBangunan.innerHTML = options
+      }
+      renderkepemilikanBangunan()
+
+      // render Usia Bangunan
+      const renderusiaBangunan = function () {
+        let options = ''
+        creditCollateralCriterias.usiaBangunan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        usiaBangunan.innerHTML = options
+      }
+      renderusiaBangunan()
+
+      // render Penggunaan Bangunan
+      const renderpenggunaanBangunan = function () {
+        let options = ''
+        creditCollateralCriterias.penggunaanBangunan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        penggunaanBangunan.innerHTML = options
+      }
+      renderpenggunaanBangunan()
+
+      // render Lokasi Bangunan
+      const renderlokasiBangunan = function () {
+        let options = ''
+        creditCollateralCriterias.lokasiBangunan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        lokasiBangunan.innerHTML = options
+      }
+      renderlokasiBangunan()
+
+      // render Total Perolehan Jaminan Bangunan
+      const rendertotalPerolehanJaminanBangunan = function () {
+        let options = ''
+        creditCollateralCriterias.totalPerolehanJaminanBangunan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPerolehanJaminanBangunan.innerHTML = options
+      }
+      rendertotalPerolehanJaminanBangunan()
+
+      // render Kepemilikan Mesin dan Peralatan
+      const renderkepemilikanMesindanPeralatan = function () {
+        let options = ''
+        creditCollateralCriterias.kepemilikanMesindanPeralatan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanMesindanPeralatan.innerHTML = options
+      }
+      renderkepemilikanMesindanPeralatan()
+
+      // render Usia Mesin dan Peralatan
+      const renderusiaMesindanPeralatan = function () {
+        let options = ''
+        creditCollateralCriterias.usiaMesindanPeralatan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        usiaMesindanPeralatan.innerHTML = options
+      }
+      renderusiaMesindanPeralatan()
+
+      // render Kondisi Mesin dan Peralatan
+      const renderkondisiMesindanPeralatan = function () {
+        let options = ''
+        creditCollateralCriterias.kondisiMesindanPeralatan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kondisiMesindanPeralatan.innerHTML = options
+      }
+      renderkondisiMesindanPeralatan()
+
+      // render Penggunaan Mesin dan Peralatan
+      const renderpenggunaanMesindanPeralatan = function () {
+        let options = ''
+        creditCollateralCriterias.penggunaanMesindanPeralatan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        penggunaanMesindanPeralatan.innerHTML = options
+      }
+      renderpenggunaanMesindanPeralatan()
+
+      // render Total Perolehan Jaminan Mesin dan Peralatan
+      const rendertotalPerolehanJaminanMesindanPeralatan = function () {
+        let options = ''
+        creditCollateralCriterias.totalPerolehanJaminanMesindanPeralatan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPerolehanJaminanMesindanPeralatan.innerHTML = options
+      }
+      rendertotalPerolehanJaminanMesindanPeralatan()
+
+      // render Kepemilikan Kendaraam
+      const renderkepemilikanKendaraan = function () {
+        let options = ''
+        creditCollateralCriterias.kepemilikanKendaraan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kepemilikanKendaraan.innerHTML = options
+      }
+      renderkepemilikanKendaraan()
+
+      // render Usia Kendaraan
+      const renderusiaKendaraan = function () {
+        let options = ''
+        creditCollateralCriterias.usiaKendaraan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        usiaKendaraan.innerHTML = options
+      }
+      renderusiaKendaraan()
+
+      // render Kondisi Kendaraan
+      const renderkondisiKendaraan = function () {
+        let options = ''
+        creditCollateralCriterias.kondisiKendaraan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        kondisiKendaraan.innerHTML = options
+      }
+      renderkondisiKendaraan()
+
+      // render Jenis Kendaraan
+      const renderjenisKendaraan = function () {
+        let options = ''
+        creditCollateralCriterias.jenisKendaraan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        jenisKendaraan.innerHTML = options
+      }
+      renderjenisKendaraan()
+
+      // render Total Perolehan Jaminan Kendaraan
+      const rendertotalPerolehanJaminanKendaraan = function () {
+        let options = ''
+        creditCollateralCriterias.totalPerolehanJaminanKendaraan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPerolehanJaminanKendaraan.innerHTML = options
+      }
+      rendertotalPerolehanJaminanKendaraan()
+
+      // did Update
+      const didUpdate = function () {
+        //
+      }
+
+      // handle change Aset Jaminan
+      asetJaminan.onchange = function (e) {
+        const value = e.target.value
+        state.asetJaminan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Tanah
+      kepemilikanTanah.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanTanah = Number(value)
+        didUpdate()
+      }
+
+      // handle change Penggunaan Tanah
+      penggunaanTanah.onchange = function (e) {
+        const value = e.target.value
+        state.penggunaanTanah = Number(value)
+        didUpdate()
+      }
+
+      // handle change Lokasi Tanah
+      lokasiTanah.onchange = function (e) {
+        const value = e.target.value
+        state.lokasiTanah = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Perolehan Jaminan Tanah
+      totalPerolehanJaminanTanah.onchange = function (e) {
+        const value = e.target.value
+        state.totalPerolehanJaminanTanah = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Bangunan
+      kepemilikanBangunan.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanBangunan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Usia Bangunan
+      usiaBangunan.onchange = function (e) {
+        const value = e.target.value
+        state.usiaBangunan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Penggunaan Bangunan
+      penggunaanBangunan.onchange = function (e) {
+        const value = e.target.value
+        state.penggunaanBangunan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Lokasi Bangunan
+      lokasiBangunan.onchange = function (e) {
+        const value = e.target.value
+        state.lokasiBangunan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Perolehan Jaminan Bangunan
+      totalPerolehanJaminanBangunan.onchange = function (e) {
+        const value = e.target.value
+        state.totalPerolehanJaminanBangunan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Mesin dan Peralatan
+      kepemilikanMesindanPeralatan.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanMesindanPeralatan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Usia Mesin dan Peralatan
+      usiaMesindanPeralatan.onchange = function (e) {
+        const value = e.target.value
+        state.usiaMesindanPeralatan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kondisi Mesin dan Peralatan
+      kondisiMesindanPeralatan.onchange = function (e) {
+        const value = e.target.value
+        state.kondisiMesindanPeralatan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Penggunaan Mesin dan Peralatan
+      penggunaanMesindanPeralatan.onchange = function (e) {
+        const value = e.target.value
+        state.penggunaanMesindanPeralatan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Perolehan Jaminan Mesin dan Peralatan
+      totalPerolehanJaminanMesindanPeralatan.onchange = function (e) {
+        const value = e.target.value
+        state.totalPerolehanJaminanMesindanPeralatan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kepemilikan Kendaraan
+      kepemilikanKendaraan.onchange = function (e) {
+        const value = e.target.value
+        state.kepemilikanKendaraan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Usia Kendaraan
+      usiaKendaraan.onchange = function (e) {
+        const value = e.target.value
+        state.usiaKendaraan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Kondisi Kendaraan
+      kondisiKendaraan.onchange = function (e) {
+        const value = e.target.value
+        state.kondisiKendaraan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Jenis Kendaraan
+      jenisKendaraan.onchange = function (e) {
+        const value = e.target.value
+        state.jenisKendaraan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Perolehan Jaminan Kendaraan
+      totalPerolehanJaminanKendaraan.onchange = function (e) {
+        const value = e.target.value
+        state.totalPerolehanJaminanKendaraan = Number(value)
+        didUpdate()
+      }
+    }
+    creditCollateralField()
 
     // calculate score
     const calculateScore = function () {
@@ -1529,7 +2453,42 @@
         state.terakhirPinjamanDisetujui +
         state.jumlahFasilitasPinjaman +
         state.totalPinjamanMenunggak +
-        state.waktuMaksimalMenunggak
+        state.waktuMaksimalMenunggak +
+        state.kepemilikanTempatUsaha +
+        state.kepemilikanAset +
+        state.modalUntukUsaha +
+        state.kepemilikanModal +
+        state.pembiayaanModalUsaha +
+        state.jangkawaktuTabungan +
+        state.depositoperBulan +
+        state.penarikanperBulan +
+        state.totalBalanceTabungan +
+        state.totalBalanceDeposito +
+        state.kondisiUsaha +
+        state.kondisiOperasional6BulanTerakhir +
+        state.kondisiOperasional1TahunTerakhir +
+        state.kinerjaKeuangan6BulanTerakhir +
+        state.kinerjaKeuangan1TahunTerakhir +
+        state.asetJaminan +
+        state.kepemilikanTanah +
+        state.penggunaanTanah +
+        state.lokasiTanah +
+        state.totalPerolehanJaminanTanah +
+        state.kepemilikanBangunan +
+        state.usiaBangunan +
+        state.penggunaanBangunan +
+        state.lokasiBangunan +
+        state.totalPerolehanJaminanBangunan +
+        state.kepemilikanMesindanPeralatan +
+        state.usiaMesindanPeralatan +
+        state.kondisiMesindanPeralatan +
+        state.penggunaanMesindanPeralatan +
+        state.totalPerolehanJaminanMesindanPeralatan +
+        state.kepemilikanKendaraan +
+        state.usiaKendaraan +
+        state.kondisiKendaraan +
+        state.jenisKendaraan +
+        state.totalPerolehanJaminanKendaraan
       return character
     }
 
@@ -1576,6 +2535,18 @@
           state.section = 'credit-capacity-field'
         } else if (state.section === 'credit-capacity-field') {
           creditCapacityFieldSection.classList.remove('show')
+          creditCapitalFieldSection.classList.add('show')
+          state.section = 'credit-capital-field'
+        } else if (state.section === 'credit-capital-field') {
+          creditCapitalFieldSection.classList.remove('show')
+          creditConditionFieldSection.classList.add('show')
+          state.section = 'credit-condition-field'
+        } else if (state.section === 'credit-condition-field') {
+          creditConditionFieldSection.classList.remove('show')
+          creditCollateralFieldSection.classList.add('show')
+          state.section = 'credit-collateral-field'
+        } else if (state.section === 'credit-collateral-field') {
+          creditCollateralFieldSection.classList.remove('show')
           creditScoreSection.classList.add('show')
           nextBtn.classList.add('disabled')
           nextBtn.classList.add('hidden')
