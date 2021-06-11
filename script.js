@@ -714,6 +714,67 @@
       [10, '76-100 juta'],
       [12, 'Lebih dari 100 juta']
     ],
+    pengeluaranperBulan: [
+      [2, 'Kurang dari 5 juta'],
+      [4, '5-10 juta'],
+      [6, '10-20 juta'],
+      [8, '20-30 juta'],
+      [10, '50-100 juta'],
+      [12, 'Lebih dari 100 juta']
+    ],
+    pengeluaranperTahun: [
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-30 juta'],
+      [6, '31-50 juta'],
+      [8, '51-75 juta'],
+      [10, '76-100 juta'],
+      [12, 'Lebih dari 100 juta']
+    ],
+    penghasilanperBulan: [
+      [0, 'Negatif'],
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-20 juta'],
+      [6, '20-30 juta'],
+      [8, '50-100 juta'],
+      [10, 'Lebih dari 100 juta']
+    ],
+    totalPinjamanAktif: [
+      [1, 'Tidak ada'],
+      [2, 'Kurang dari 10 juta'],
+      [4, '10-50 juta'],
+      [6, '50-100 juta'],
+      [8, 'Lebih dari 100 juta']
+    ],
+    terakhirPinjamanDisetujui: [
+      [1, 'Tidak ada'],
+      [2, 'Kurang dari 6 bulan'],
+      [4, '6 bulan-2 tahun lalu'],
+      [6, '2-5 tahun lalu'],
+      [8, '5-10 tahun lalu'],
+      [10, 'Lebih dari 10 tahun lalu']
+    ],
+    jumlahFasilitasPinjaman: [
+      [1, 'Tidak ada'],
+      [2, '1 fasilitas'],
+      [4, '1-3 fasilitas'],
+      [6, '3-5 fasilitas'],
+      [8, '5-10 fasilitas'],
+      [10, 'Lebih dari 10 fasilitas']
+    ],
+    totalPinjamanMenunggak: [
+      [1, 'Tidak ada'],
+      [2, '1-2 pinjaman'],
+      [4, '3-5 pinjaman'],
+      [6, '5-7 pinjaman'],
+      [8, 'Lebih dari 7 pinjaman']
+    ],
+    waktuMaksimalMenunggak: [
+      [1, 'Tidak pernah'],
+      [2, 'Kurang dari 30 hari'],
+      [4, '30-45 hari'],
+      [6, '46-60 hari'],
+      [8, '61-90 hari']
+    ],
   }
 
   const b = d.body
@@ -754,6 +815,13 @@
       persainganUsaha: 2,
       omsetperBulan: 2,
       omsetperTahun: 2,
+      pengeluaranperBulan: 2,
+      pengeluaranperTahun: 2,
+      penghasilanperBulan: 2,
+      totalPinjamanAktif: 1,
+      terakhirPinjamanDisetujui: 1,
+      totalPinjamanMenunggak: 1,
+      waktuMaksimalMenunggak: 1,
     }
 
     const prevBtn = b.querySelector('#prev-btn')
@@ -1164,6 +1232,13 @@
       const persainganUsaha = b.querySelector('#persainganUsaha')
       const omsetperBulan = b.querySelector('#omsetperBulan')
       const omsetperTahun = b.querySelector('#omsetperTahun')
+      const pengeluaranperBulan = b.querySelector('#pengeluaranperBulan')
+      const pengeluaranperTahun = b.querySelector('#pengeluaranperTahun')
+      const penghasilanperBulan = b.querySelector('#penghasilanperBulan')
+      const totalPinjamanAktif = b.querySelector('#totalPinjamanAktif')
+      const jumlahFasilitasPinjaman = b.querySelector('#jumlahFasilitasPinjaman')
+      const totalPinjamanMenunggak = b.querySelector('#totalPinjamanMenunggak')
+      const waktuMaksimalMenunggak = b.querySelector('#waktuMaksimalMenunggak')
 
       // render Bidang Usaha
       const renderBidangUsaha = function () {
@@ -1235,6 +1310,86 @@
       }
       renderomsetperTahun()
 
+      // render Pengeluaran per Bulan
+      const renderpengeluaranperBulan = function () {
+        let options = ''
+        creditCapacityCriterias.pengeluaranperBulan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        pengeluaranperBulan.innerHTML = options
+      }
+      renderpengeluaranperBulan()
+
+      // render Pengeluaran per Tahun
+      const renderpengeluaranperTahun = function () {
+        let options = ''
+        creditCapacityCriterias.pengeluaranperTahun.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        pengeluaranperTahun.innerHTML = options
+      }
+      renderpengeluaranperTahun()
+
+      // render Penghasilan per Bulan
+      const renderpenghasilanperBulan = function () {
+        let options = ''
+        creditCapacityCriterias.penghasilanperBulan.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        penghasilanperBulan.innerHTML = options
+      }
+      renderpenghasilanperBulan()
+
+      // render Total Pinjaman Aktif
+      const rendertotalPinjamanAktif = function () {
+        let options = ''
+        creditCapacityCriterias.totalPinjamanAktif.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPinjamanAktif.innerHTML = options
+      }
+      rendertotalPinjamanAktif()
+
+      // render Terakhir Pinjaman Disetujui
+      const renderterakhirPinjamanDisetujui = function () {
+        let options = ''
+        creditCapacityCriterias.terakhirPinjamanDisetujui.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        terakhirPinjamanDisetujui.innerHTML = options
+      }
+      renderterakhirPinjamanDisetujui()
+
+      // render Jumlah Fasilitas Pinjaman
+      const renderjumlahFasilitasPinjaman = function () {
+        let options = ''
+        creditCapacityCriterias.jumlahFasilitasPinjaman.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        jumlahFasilitasPinjaman.innerHTML = options
+      }
+      renderjumlahFasilitasPinjaman()
+
+      // render Total Pinjaman Menunggak
+      const rendertotalPinjamanMenunggak = function () {
+        let options = ''
+        creditCapacityCriterias.totalPinjamanMenunggak.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        totalPinjamanMenunggak.innerHTML = options
+      }
+      rendertotalPinjamanMenunggak()
+
+      // render Waktu Maksimal Menunggak
+      const renderwaktuMaksimalMenunggak= function () {
+        let options = ''
+        creditCapacityCriterias.waktuMaksimalMenunggak.forEach((option) => {
+          options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
+        })
+        waktuMaksimalMenunggak.innerHTML = options
+      }
+      renderwaktuMaksimalMenunggak()
+
       // did Update
       const didUpdate = function () {
         //
@@ -1288,6 +1443,63 @@
         state.omsetperTahun = Number(value)
         didUpdate()
       }
+
+      // handle change Pengeluaran per Bulan
+      pengeluaranperBulan.onchange = function (e) {
+        const value = e.target.value
+        state.pengeluaranperBulan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Pengeluaran per Tahun
+      pengeluaranperTahun.onchange = function (e) {
+        const value = e.target.value
+        state.pengeluaranperTahun = Number(value)
+        didUpdate()
+      }
+
+      // handle change Penghasilan per Bulan
+      penghasilanperBulan.onchange = function (e) {
+        const value = e.target.value
+        state.penghasilanperBulan = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Pinjaman Aktif
+      totalPinjamanAktif.onchange = function (e) {
+        const value = e.target.value
+        state.totalPinjamanAktif = Number(value)
+        didUpdate()
+      }
+
+      // handle change Terakhir Pinjaman Disetujui
+      terakhirPinjamanDisetujui.onchange = function (e) {
+        const value = e.target.value
+        state.terakhirPinjamanDisetujui = Number(value)
+        didUpdate()
+      }
+
+      // handle change Jumlah Fasilitas Pinjaman
+      jumlahFasilitasPinjaman.onchange = function (e) {
+        const value = e.target.value
+        state.jumlahFasilitasPinjaman = Number(value)
+        didUpdate()
+      }
+
+      // handle change Total Pinjaman Menunggak
+      totalPinjamanMenunggak.onchange = function (e) {
+        const value = e.target.value
+        state.totalPinjamanMenunggak = Number(value)
+        didUpdate()
+      }
+
+      // handle change Waktu Maksimal Menunggak
+      waktuMaksimalMenunggak.onchange = function (e) {
+        const value = e.target.value
+        state.waktuMaksimalMenunggak = Number(value)
+        didUpdate()
+      }
+
     }
     creditCapacityField()
 
@@ -1309,7 +1521,15 @@
         state.totalPekerja +
         state.persainganUsaha +
         state.omsetperBulan +
-        state.omsetperTahun
+        state.omsetperTahun +
+        state.pengeluaranperBulan +
+        state.pengeluaranperTahun +
+        state.penghasilanperBulan +
+        state.totalPinjamanAktif +
+        state.terakhirPinjamanDisetujui +
+        state.jumlahFasilitasPinjaman +
+        state.totalPinjamanMenunggak +
+        state.waktuMaksimalMenunggak
       return character
     }
 
