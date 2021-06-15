@@ -10,7 +10,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background: #fafafa;
+  background: #FFFFF;
 }
 
 .appbar {
@@ -19,14 +19,14 @@ body {
   left: 0;
   width: 100%;
   height: 64px;
-  background: #E91E63;
+  background: #2F4F4F;
   box-shadow: 0 4px 8px rgba(0, 0, 0, .24);
   padding: 12px 16px;
 }
 
 .appbar .title {
   width: 100%;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
   color: #ffffff;
   text-align: center;
@@ -36,6 +36,7 @@ body {
   width: 100%;
   font-size: 16px;
   color: #ffffff;
+font-weight: bold;
 }
 
 .wrapper {
@@ -55,20 +56,22 @@ body {
 
 .card#disclaimer {
   margin: 16px auto 24px auto;
-  background: #546E7A;
+  background: #8FBC8F;
 }
 
 .card#disclaimer p {
   float: none;
   text-align: center;
+font-weight: bold;
 }
 
 .card {
   width: 100%;
   border-radius: 6px;
-  background: #ffffff;
+  background: #708090;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .24);
   padding: 16px;
+font-weight: bold;
 }
 
 .field {
@@ -78,10 +81,10 @@ body {
 
 .label {
   width: 100%;
-  font-size: 13px;
+  font-size: 16px;
   margin: 0 0 8px;
   cursor: default;
-  color: rgba(0, 0, 0, .56);
+  color: BLACK;
 }
 
 .input {
@@ -138,7 +141,7 @@ body {
   padding: 0 16px;
   height: 36px;
   cursor: pointer;
-  background: #2196F3;
+  background: #2F4F4F;
   font-size: 16px;
   color: #ffffff;
   float: left;
@@ -162,11 +165,12 @@ body {
 .personal-wrapper {
   width: 100%;
   padding: 12px 0;
+color: rgba(0, 0, 0, .56);
 }
 
 .score-label {
   width: 100%;
-  font-size: 13px;
+  font-size: 20px;
   margin: 12 0 8px;
   cursor: default;
   color: rgba(0, 0, 0, .56);
