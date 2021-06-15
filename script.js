@@ -2,7 +2,7 @@
   'use strict'
 
   const listProvinces = [
-    [0, 'Aceh',[
+    [0, 'Aceh', [
       'Kab. Aceh Barat',
       'Kab. Aceh Barat Daya',
       'Kab. Aceh Besar',
@@ -774,7 +774,7 @@
       [4, '30-45 hari'],
       [6, '46-60 hari'],
       [8, '61-90 hari']
-    ],
+    ]
   }
 
   const creditCapitalCriterias = {
@@ -837,7 +837,7 @@
       [5, '26-50 juta'],
       [6, '50-100 juta'],
       [7, 'Lebih dari 100 juta']
-    ],
+    ]
   }
 
   const creditConditionCriterias = {
@@ -860,7 +860,7 @@
     kinerjaKeuangan1TahunTerakhir: [
       [2, 'Tidak lancar'],
       [3, 'Lancar']
-    ],
+    ]
   }
 
   const creditCollateralCriterias = {
@@ -995,7 +995,7 @@
       [6, '51-100 juta'],
       [2, '100-150 juta'],
       [2, 'Lebih dari 200 juta']
-    ],
+    ]
   }
 
   const b = d.body
@@ -1041,6 +1041,7 @@
       penghasilanperBulan: 2,
       totalPinjamanAktif: 1,
       terakhirPinjamanDisetujui: 1,
+      jumlahFasilitasPinjaman: 1,
       totalPinjamanMenunggak: 1,
       waktuMaksimalMenunggak: 1,
       // credit-capital-field
@@ -1080,7 +1081,7 @@
       usiaKendaraan: 1,
       kondisiKendaraan: 1,
       jenisKendaraan: 1,
-      totalPerolehanJaminanKendaraan: 1,
+      totalPerolehanJaminanKendaraan: 1
     }
 
     const prevBtn = b.querySelector('#prev-btn')
@@ -1498,6 +1499,7 @@
       const pengeluaranperTahun = b.querySelector('#pengeluaranperTahun')
       const penghasilanperBulan = b.querySelector('#penghasilanperBulan')
       const totalPinjamanAktif = b.querySelector('#totalPinjamanAktif')
+      const terakhirPinjamanDisetujui = b.querySelector('#terakhirPinjamanDisetujui')
       const jumlahFasilitasPinjaman = b.querySelector('#jumlahFasilitasPinjaman')
       const totalPinjamanMenunggak = b.querySelector('#totalPinjamanMenunggak')
       const waktuMaksimalMenunggak = b.querySelector('#waktuMaksimalMenunggak')
@@ -1643,7 +1645,7 @@
       rendertotalPinjamanMenunggak()
 
       // render Waktu Maksimal Menunggak
-      const renderwaktuMaksimalMenunggak= function () {
+      const renderwaktuMaksimalMenunggak = function () {
         let options = ''
         creditCapacityCriterias.waktuMaksimalMenunggak.forEach((option) => {
           options = options + '<option value=\'' + option[0] + '\'>' + option[1] + '</option>'
@@ -2430,6 +2432,7 @@
     // calculate score
     const calculateScore = function () {
       const character = 0 +
+        // character
         state.age +
         state.education +
         state.marriage +
@@ -2439,6 +2442,7 @@
         state.onlineShopping1th +
         state.insurance +
         state.investment +
+        // credit-capacity-field
         state.bidangUsaha +
         state.lamaUsaha +
         state.usahayangDimiliki +
@@ -2454,6 +2458,7 @@
         state.jumlahFasilitasPinjaman +
         state.totalPinjamanMenunggak +
         state.waktuMaksimalMenunggak +
+        // Credit-capital-field
         state.kepemilikanTempatUsaha +
         state.kepemilikanAset +
         state.modalUntukUsaha +
@@ -2464,11 +2469,13 @@
         state.penarikanperBulan +
         state.totalBalanceTabungan +
         state.totalBalanceDeposito +
+        // credit-condition-field
         state.kondisiUsaha +
         state.kondisiOperasional6BulanTerakhir +
         state.kondisiOperasional1TahunTerakhir +
         state.kinerjaKeuangan6BulanTerakhir +
         state.kinerjaKeuangan1TahunTerakhir +
+        // credit-collateral-field
         state.asetJaminan +
         state.kepemilikanTanah +
         state.penggunaanTanah +
@@ -2520,6 +2527,8 @@
       companyPhone.innerHTML = state.companyPhone
     }
 
+    const subTitle = document.querySelector('.appbar .sub-title')
+
     nextBtn.onclick = function () {
       if (!nextBtn.classList.contains('show')) {
         if (state.section === 'personal-field') {
@@ -2529,22 +2538,27 @@
           prevBtn.classList.remove('disabled')
           prevBtn.classList.remove('hidden')
           state.section = 'credit-character-field'
+          subTitle.innerHTML = 'Character'
         } else if (state.section === 'credit-character-field') {
           creditCharacterFieldSection.classList.remove('show')
           creditCapacityFieldSection.classList.add('show')
           state.section = 'credit-capacity-field'
+          subTitle.innerHTML = 'Capacity'
         } else if (state.section === 'credit-capacity-field') {
           creditCapacityFieldSection.classList.remove('show')
           creditCapitalFieldSection.classList.add('show')
           state.section = 'credit-capital-field'
+          subTitle.innerHTML = 'Capital'
         } else if (state.section === 'credit-capital-field') {
           creditCapitalFieldSection.classList.remove('show')
           creditConditionFieldSection.classList.add('show')
           state.section = 'credit-condition-field'
+          subTitle.innerHTML = 'Condition'
         } else if (state.section === 'credit-condition-field') {
           creditConditionFieldSection.classList.remove('show')
           creditCollateralFieldSection.classList.add('show')
           state.section = 'credit-collateral-field'
+          subTitle.innerHTML = 'Collateral'
         } else if (state.section === 'credit-collateral-field') {
           creditCollateralFieldSection.classList.remove('show')
           creditScoreSection.classList.add('show')
@@ -2552,6 +2566,7 @@
           nextBtn.classList.add('hidden')
           prevBtn.classList.remove('disabled')
           state.section = 'credit-score'
+          subTitle.innerHTML = 'Credit Score'
           creditScoreSectionValue.innerHTML = calculateScore()
           displayPersonalData()
         }
@@ -2567,13 +2582,47 @@
           prevBtn.classList.add('disabled')
           prevBtn.classList.add('hidden')
           state.section = 'personal-field'
+          subTitle.innerHTML = 'Personal'
         } else if (state.section === 'credit-score') {
           creditScoreSection.classList.remove('show')
+          creditCollateralFieldSection.classList.add('show')
+          nextBtn.classList.remove('disabled')
+          nextBtn.classList.remove('hidden')
+          // prevBtn.classList.add('disabled')
+          state.section = 'credit-collateral-field'
+          subTitle.innerHTML = 'Collateral'
+        } else if (state.section === 'credit-collateral-field') {
+          creditCollateralFieldSection.classList.remove('show')
+          creditConditionFieldSection.classList.add('show')
+          nextBtn.classList.remove('disabled')
+          nextBtn.classList.remove('hidden')
+          // prevBtn.classList.add('disabled')
+          state.section = 'credit-condition-field'
+          subTitle.innerHTML = 'Condition'
+        } else if (state.section === 'credit-condition-field') {
+          creditConditionFieldSection.classList.remove('show')
+          creditCapitalFieldSection.classList.add('show')
+          nextBtn.classList.remove('disabled')
+          nextBtn.classList.remove('hidden')
+          // prevBtn.classList.add('disabled')
+          state.section = 'credit-capital-field'
+          subTitle.innerHTML = 'Capital'
+        } else if (state.section === 'credit-capital-field') {
+          creditCapitalFieldSection.classList.remove('show')
+          creditCapacityFieldSection.classList.add('show')
+          nextBtn.classList.remove('disabled')
+          nextBtn.classList.remove('hidden')
+          // prevBtn.classList.add('disabled')
+          state.section = 'credit-capacity-field'
+          subTitle.innerHTML = 'Capacity'
+        } else if (state.section === 'credit-capacity-field') {
+          creditCapacityFieldSection.classList.remove('show')
           creditCharacterFieldSection.classList.add('show')
           nextBtn.classList.remove('disabled')
           nextBtn.classList.remove('hidden')
           // prevBtn.classList.add('disabled')
           state.section = 'credit-character-field'
+          subTitle.innerHTML = 'Character'
         }
       }
     }
