@@ -2527,7 +2527,7 @@
       companyPhone.innerHTML = state.companyPhone
     }
 
-    const subTitle = document.querySelector('.appbar .sub-title')
+    const subTitle = document.querySelector('.appbar-sub .sub-title')
 
     nextBtn.onclick = function () {
       if (!nextBtn.classList.contains('show')) {
